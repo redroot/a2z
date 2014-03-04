@@ -26,10 +26,10 @@ module A2z
            'Version'      => '2011-08-01'
     
     def initialize(opts = {})
-      self.country  = opts.fetch(:country, :us)
-      self.key      = opts[:key]
-      self.secret   = opts[:secret]
-      self.tag      = opts[:tag]
+      self.country               = opts.fetch(:country, :us)
+      self.aws_access_key_id     = opts[:key]
+      self.aws_secret_access_key = opts[:secret]
+      self.tag                   = opts[:tag]
     end
     
     def country=(code)
@@ -57,14 +57,6 @@ module A2z
     
     def tag=(tag)
       @tag = tag
-    end
-
-    def key=(key)
-      @key = key
-    end
-
-    def secret=(secret)
-      @secret = secret
     end
     
     def request(req)
