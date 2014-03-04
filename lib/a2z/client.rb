@@ -58,6 +58,14 @@ module A2z
     def tag=(tag)
       @tag = tag
     end
+
+    def key=(key)
+      @key = key
+    end
+
+    def secret=(secret)
+      @secret = secret
+    end
     
     def request(req)
       response = get(query: req.params)
