@@ -35,7 +35,7 @@ module A2z
     def country=(code)
       raise ArgumentError.new("Country code must be one of #{HOSTS.keys.join(', ')}.") if code.nil? || HOSTS[code.to_sym].nil?
       @country = code.to_sym
-      @endpoint = "http://#{HOSTS[@country]}/onca/xml"
+      @aws_endpoint = "http://#{HOSTS[@country]}/onca/xml"
     end
     
     def item_search(&block)
